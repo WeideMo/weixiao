@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    	<link rel="stylesheet" href="css/ui-tab.css">
+    	<link rel="stylesheet" href="css/ui-btn.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        
+		<link rel="stylesheet" href="css/forum_list.css">
+        <script src="js/zy_control.js"></script>
+        <script src="js/zy_click.js"></script>
+		<style>.pinkbg{
+			background:#fab;
+		}</style>
+    </head>
+<body class="um-vp c-wh" ontouchstart>
+        <div id="page_0" class="up ub ub-ver" tabindex="0">
+			<div id="header" class="uh c-m3 t-wh headerbg">
+                <h1 class="ut ulev0 ut-s tx-c" tabindex="0"><span style="font-size:1.3em;">微校beta1.0</span></h1>
+            </div>
+            <!--header结束-->
+			<!--content开始-->
+            <div id="content" class="ub-f1 tx-l t-bla ub-img6 res10">
+            </div>
+            <!--content结束-->
+			<!--footer开始-->
+            <div id="footer" class="uf c-m2 c-bla t-wh">
+                 <!--iPhone导航条开始-->
+			<div class="ub c-m12 tab t-wh footerbg">	
+			   <input class="uhide index" type="radio"  name="tabSwitch" checked="true">
+				<div ontouchstart="zy_touch('',zy_for)" onclick="windowOpen('index');" class="ub-f1 ub ub-ver tab-act"><div class="ub-f1 ub-img5 tp-info"></div><div class="footStyle tx-c">个人</div></div>
+			 	<input class="uhide share" type="radio"  name="tabSwitch" >
+				<div ontouchstart="zy_touch('',zy_for)" onclick="windowOpen('share');" class="ub-f1 ub ub-ver tab-act"><div class="ub-f1 ub-img5 tp-home"></div><div class="footStyle tx-c">分享</div></div>
+				<input class="uhide info" type="radio"   name="tabSwitch">
+				<div ontouchstart="zy_touch('',zy_for)" onclick="windowOpen('info');" class="ub-f1 ub ub-ver tab-act"><div class="ub-f1 ub-img5 tp-talk"></div><div class="footStyle tx-c" >资讯</div></div>
+				<input class="uhide activity" type="radio" name="tabSwitch">
+				<div ontouchstart="zy_touch('',zy_for)" onclick="windowOpen('activity');" class="ub-f1 ub ub-ver tab-act"><div class="ub-f1 ub-img5 tp-shop"></div><div class="footStyle tx-c">互动</div></div>
+				
+			</div>
+<!--iPhone导航条结束-->
+            </div>
+            <!--footer结束-->
+        </div>
+    </body>
+	<script src="js/zepto.js"></script>
+	<script src="js/init.js"></script>
+<script>
+        zy_init();
+        window.uexOnload = function(type){
+            if (!type) {
+                zy_con("content", "index_detail.html", 0, $$("header").offsetHeight);
+            }
+            window.onorientationchange = window.onresize = function(){
+                zy_resize("content", 0, $$("header").offsetHeight);
+            }
+        }</script>
+</html>

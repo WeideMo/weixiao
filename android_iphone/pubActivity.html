@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-tab.css">
+    <link rel="stylesheet" href="css/ui-btn.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+		<link rel="stylesheet" href="css/pub-act.css">
+		<link rel="stylesheet" href="css/ui-media.css">
+        <script src="js/zy_control.js"></script>
+        <script src="js/zy_click.js"></script>
+    </head>
+    <body class="um-vp c-wh" ontouchstart>
+        <div id="page_0" class="up ub ub-ver" tabindex="0">
+			<div id="header" class="uh c-m3 t-wh headerbg">
+                <!--按钮开始-->
+ 		 <div class="btn btn-l ub ub-ac ">       
+              <div class="ulim" ontouchstart="zy_touch('btn-back')" onclick="uexWindow.close(-1);" style="border-right:1px dotted #ccc;">
+              	<img src='css/images/title_back.png' style="width:2.5em;height:1.5em;">
+				<span style="height:100%;">&nbsp;</span>
+			  </div>       
+          </div>
+<!--按钮结束--><h1 class="hbg ulev0 ut-s tx-c" tabindex="0"><span style="font-size:1.3em;">创建活动</span></h1>
+            </div>
+            <!--header结束-->
+			<!--content开始-->
+            <div id="content" class="ub-f1 tx-l t-bla ub-img6 res10">
+            	<div class="loginWrap">
+					<div class="slogan">发起你的专属活动吧！</div>
+					<div class="loginModule">
+						<form id="form" method="get">
+							<input name="check" value="1" type="hidden">
+							<div class="inputArea">
+								<div class="inputLine">
+									<div class="il">团队主题：</div>
+									<div class="ir">
+										<input id="asubject" name="asubject" placeholder="请输入团队主题…" autocapitalize="off" autocomplete="off" type="text">
+									</div>
+								</div>
+								<div class="inputLine">
+									<div class="il">发起者：</div>
+									<div class="ir">
+										<input id="author" name="author" placeholder="请输入发起者…" autocapitalize="off" autocomplete="off" type="text">
+									</div>
+								</div>
+								<div class="inputLine">
+									<div class="il">联系电话：</div>
+									<div class="ir">
+										<input id="atel" name="atel" placeholder="请输入联系电话…" autocapitalize="off" autocomplete="off" type="text">
+									</div>
+								</div>
+								<div class="inputLine">
+									<div class="il">活动时间：</div>
+									<div class="ir">
+										<input id="adate" name="adate" placeholder="请输入活动时间…" autocapitalize="off" autocomplete="off" type="text">
+									</div>
+								</div>
+								<div class="inputLine">
+									<div class="il">上限人数：</div>
+									<div class="ir">
+										<input id="anum" name="anum" value="" placeholder="请输入上限人数…" type="text">
+									</div>
+								</div>
+								<div class="inputLine1">
+									  
+                                <textarea placeholder="在此输入活动内容…" id="acontent" name="acontent"  class="" style="height:5em; width:100%"></textarea>
+
+								</div>
+								
+							</div>
+						</form>
+					</div>
+					   <br/>
+					   
+						<div class="">
+							<div ontouchstart="zy_touch('btn-newact')" class="btn uba b-org uinn5 c-org c-m1 uc-a t-wh"  onclick="publishAct();"  style="float:right; width::5em; color:white;">创建活动</div>
+						</div>
+			   </div>
+            </div>
+            <!--content结束-->	
+        </div>
+    </body>
+	<script src="js/zepto.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/forum.js"></script>
+    <script>
+        zy_init();
+    </script>
+</html>

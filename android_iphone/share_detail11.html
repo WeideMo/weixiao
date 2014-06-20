@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-tab.css">
+	<link rel="stylesheet" href="css/ui-btn.css">
+    <link rel="stylesheet" href="css/ui-img.css"> 
+	<link rel="stylesheet" href="css/ui-list.css">
+	<link rel="stylesheet" href="css/ui-input.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/ui-box.css">
+	<link rel="stylesheet" href="css/ui-color.css">
+	<link rel="stylesheet" href="css/forum_list.css">
+	<link rel="stylesheet" href="css/scroller.css">
+    <script src="js/zy_control.js"></script>
+	<script src="js/zy_anim.js"></script>
+    <script src="js/zy_click.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+    <script>
+    	
+	var myScroll,
+			pullDownEl, pullDownOffset,
+			generatedCount = 0;
+		
+		function pullDownAction () {
+				setTimeout(function () {
+				//var cid = localStorage.getItem('cid');
+				/**
+				 * 这个地方就是下拉刷新时操作，比如重新加载数据
+				 * 外部的setTimeout 在正式环境可以去除，此处只是为了显示一个延迟的效果
+				 */
+				getForumList();
+				
+				myScroll.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+			}, 2000);
+			uexWindow.toast('0','5','刷新成功','2000');
+		}
+		
+		function pullUpAction () {
+			setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+				
+				myScroll.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+			}, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
+		}
+		
+		function loaded() {
+			pullDownEl = document.getElementById('pullDown');
+			pullDownOffset = pullDownEl.offsetHeight;
+			
+			myScroll = new iScroll('wrapper', {
+				fixedScrollbar:false,
+				vScrollbar:false,
+				checkDOMChanges:true,
+				useTransition: true,
+				topOffset: pullDownOffset,
+				onRefresh: function () {
+					if (pullDownEl.className.match('loading')) {
+						pullDownEl.className = '';
+						pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+					} 
+				},
+				onScrollMove: function () {
+					if (this.y > 5 && !pullDownEl.className.match('flip')) {
+						pullDownEl.className = 'flip';
+						pullDownEl.querySelector('.pullDownLabel').innerHTML = '松开刷新...';
+						this.minScrollY = 0;
+					} else if (this.y < 5 && pullDownEl.className.match('flip')) {
+						pullDownEl.className = '';
+						pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+						this.minScrollY = -pullDownOffset;
+					} 
+				},
+				onScrollEnd: function () {
+					if (pullDownEl.className.match('flip')) {
+						pullDownEl.className = 'loading';
+						pullDownEl.querySelector('.pullDownLabel').innerHTML = '正在刷新...';				
+						pullDownAction();	// Execute custom function (ajax call?)
+					} 
+				}
+			});
+			
+			setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
+		}
+		
+		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+		document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+		
+	</script>
+  </head>
+<body class="um-vp" ontouchstart style="background: url('css/images/forumlist_bg.png') repeat scroll 0 0 #F1F1F1;">
+	<div style="overflow: hidden; left: 0px;" id="wrapper">
+	<div style="-moz-transition-property: -moz-transform; -moz-transform-origin: 0px 0px; -moz-transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); -moz-transform: translate(0px, -51px) scale(1) translateZ(0px); -moz-transition-duration: 0ms;" id="scroller">
+		<div class="" id="pullDown">
+			<span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
+		</div>
+	<div id="content" class="ub-f1 tx-l t-bla ub-img6 res10">
+		
+		<!--列表开始-->
+		<div class="uba b-gra us uc-n " id="forum_list">  
+	
+		
+		</div>
+		<!--列表结束-->
+		<div class="footer">
+		 	<button id="nextpage" ontouchstart="zy_touch('btn-act')" onclick="getMoreThread()" class="buttonBg">查看下10条</button>
+		</div>
+     </div>
+	 </div>
+</body>
+<script src="js/zepto.js"></script>
+<script src="js/forum.js"></script>
+<script src="js/zy_icache.js"></script>
+<script src="js/carousel.js"></script>
+<script>
+zy_init();
+window.uexOnload=function(type)
+{
+	if(!type){
+	}
+	getForumList();
+	
+}
+
+</script>
+</html>

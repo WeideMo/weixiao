@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-res.css">
+    <link rel="stylesheet" href="css/ui-btn.css">
+    <link rel="stylesheet" href="css/ui-img.css">
+    <link rel="stylesheet" href="css/ui-list.css">
+    <link rel="stylesheet" href="css/ui-input.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-box.css">
+    <link rel="stylesheet" href="css/ui-color.css">
+	<link rel="stylesheet" href="css/index_list.css">
+    <script src="js/zy_control.js"></script>
+	<script src="js/zy_anim.js"></script>
+    <script src="js/zy_click.js"></script>
+	<style type="text/css">
+	</style>
+  </head>
+<body class="um-vp" ontouchstart style="background: url('css/images/forumlist_bg.png') repeat scroll 0 0 #F1F1F1;">
+	<div style="overflow: hidden; left: 0px;" id="wrapper">
+	
+	
+		  
+        <div id="user_box">
+        	<div id="user">
+        		<div id="user_pic"></div>
+				<div id="user_name">昵称：</div>
+				<!--按钮开始-->
+<div id="login_out" class="us uinl b-wh uba1 c-m1 c-red uc-a2 t-wh ulev-1 uinn1 login_out" ontouchstart="zy_touch('btn-act')" onclick="clearLocal();" >   
+    注销     
+   </div>
+<!--按钮结束-->
+        	</div>
+			<div id="user_info">
+				<div id="user_age">年龄：</div>
+				<div id="user_sex">性别：</div>
+				<div id="user_area">地区：</div>
+			</div>
+			<div id="user_sign">个人签名：</div>
+        </div>
+		<!--列表开始-->
+<div class="uc-a1 uba b-gra c-wh us">  
+  <ul ontouchstart="zy_touch('btn-act')" onclick="goToLogin()" class="uc-t1 ubb ub b-gra c-m2 t-bla ub-ac umh4 lis">   
+   <li class="ub-f1 ut-s">用户登录</li>    
+  <li class="tx-r t-blu ulev-1">login</li>     
+ <li class="res8 lis-sw ub-img"></li>   
+ </ul>   
+ <ul ontouchstart="zy_touch('btn-act')" onclick="goToClass()" class=" ub ubb b-gra c-m2 t-bla ub-ac umh4 lis">     
+ <li class="ub-f1 ut-s">课表查询</li>      
+<li class="tx-r t-blu ulev-1">classes</li>    
+  <li class="res8 lis-sw ub-img"></li>   
+ </ul>
+ <ul ontouchstart="zy_touch('btn-act')" onclick="goToActList()" class=" ub ubb b-gra c-m2 t-bla ub-ac umh4 lis">     
+ <li class="ub-f1 ut-s">活动查询</li>      
+<li class="tx-r t-blu ulev-1">activity</li>    
+  <li class="res8 lis-sw ub-img"></li>   
+ </ul>
+ <ul ontouchstart="zy_touch('btn-act')" onclick="goToPublish()" class=" ub ubb b-gra c-m2 t-bla ub-ac umh4 lis">     
+ <li class="ub-f1 ut-s">发表心情</li>      
+<li class="tx-r t-blu ulev-1">share</li>    
+  <li class="res8 lis-sw ub-img"></li>   
+ </ul>      
+ <!--<ul ontouchstart="zy_touch('btn-act')" onclick="goToDraw()"  class="uc-b1 c-m2 ub  t-bla ub-ac umh4 lis" >     
+ <li class="ub-f1 ut-s">辅助画板</li>     
+ <li class="tx-r t-blu ulev-1">print</li>     
+ <li class="res8 lis-sw ub-img"></li>
+    </ul>  --> 
+  </div>
+<!--列表结束-->
+		
+		
+		
+	 </div>
+</body>
+<script src="js/zepto.js"></script>
+<script src="js/forum.js"></script>
+<script src="js/login.js"></script>
+<script>
+zy_init();
+window.uexOnload=function(type)
+{
+	if(!type){
+	}
+	    init();
+	 
+}
+
+</script>
+</html>

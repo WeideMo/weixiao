@@ -1,0 +1,60 @@
+.tab
+{
+	height:3em;padding:0.2em 0.1em
+}
+
+input[type="radio"]:checked + div.tab-act
+{
+	background-color:rgba(255,255,255,0.1) !important;
+	border-radius:0.3em;
+	border: 0px;
+	background-image: none;
+}
+
+input[type="radio"] + div>div.tp-info{
+	background-image: url(res-apple/info.png);
+}
+
+input[type="radio"]:checked + div>div.tp-info{
+	background-image: url(res-apple/info-act.png);
+}
+
+input[type="radio"] + div>div.tp-menu{
+	background-image: url(res-apple/menu.png) ;
+}
+
+input[type="radio"]:checked + div>div.tp-menu{
+	background-image: url(res-apple/menu-act.png);
+}
+
+input[type="radio"] + div>div.tp-home{
+	background-image: url(res-apple/home.png);
+}
+
+input[type="radio"]:checked + div>div.tp-home{
+	background-image: url(res-apple/home-act.png);
+}
+
+input[type="radio"] + div>div.tp-set{
+	background-image: url(res-apple/set.png);
+}
+
+input[type="radio"]:checked + div>div.tp-set{
+	background-image: url(res-apple/set-act.png);
+}
+
+input[type="radio"] + div>div.tp-shop{
+	background-image: url(res-apple/shop.png);
+}
+
+input[type="radio"]:checked + div>div.tp-shop{
+	background-image: url(res-apple/shop-act.png);
+}
+
+input[type="radio"] + div>div.tp-talk{
+	background-image: url(res-apple/talk.png);
+}
+
+input[type="radio"]:checked + div>div.tp-talk{
+	background-image: url(res-apple/talk-act.png);
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-tab.css">
+    <link rel="stylesheet" href="css/ui-btn.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+		<link rel="stylesheet" href="css/login.css">
+		<link rel="stylesheet" href="css/ui-media.css">
+        <script src="js/zy_control.js"></script>
+        <script src="js/zy_click.js"></script>
+		<script src="js/zepto.js"></script>
+		<style type="text/css">
+#php100{ border:1px solid #ccc;}
+#clearbtn{background:red; color:#fff; width:50px; height:25px; margin:0 auto; text-align:center;}
+</style>
+    </head>
+    <body class="um-vp c-wh" ontouchstart>
+        <div id="page_0" class="up ub ub-ver" tabindex="0">
+			<div id="header" class="uh c-m3 t-wh headerbg">
+                <!--按钮开始-->
+ 		 <div class="btn btn-l ub ub-ac ">       
+              <div class="ulim" ontouchstart="zy_touch('btn-back')" onclick="uexWindow.close(-1);" style="border-right:1px dotted #ccc;">
+              	<img src='css/images/title_back.png' style="width:2.5em;height:1.5em;">
+				<span style="height:100%;">&nbsp;</span>
+			  </div>       
+          </div>
+<!--按钮结束--><h1 class="hbg ulev0 ut-s tx-c" tabindex="0"><span style="font-size:1.3em;">画板</span></h1>
+            </div>
+            <!--header结束-->
+			<!--content开始-->
+            <div id="content" class="ub-f1 tx-l t-bla ub-img6 res10">
+            		
+   <canvas id="can" width="316px" height="400px"></canvas>
+
+<script type="text/javascript">
+ var canvas = document.getElementById('can');
+ var board=canvas.getContext("2d");
+ 	 board.lineWidth=2
+	 board.strokeStyle="blue";
+ var pp=false;
+	 
+	 
+ //当鼠标按下时
+ $("#can").mousedown(function(e){
+  var mouseX = e.pageX - this.offsetLeft;
+  var mouseY = e.pageY - this.offsetTop;
+   pp=true;
+   board.moveTo(mouseX,mouseY); //起始位置
+
+  
+ });
+ 
+ //当鼠标抬起时
+ $("#can").mouseup(function(e){
+   pp=false;
+ });
+ 
+ //当鼠标移动时
+ $("#can").mousemove(function(e){
+  
+  var mouseX = e.pageX - this.offsetLeft;
+  var mouseY = e.pageY - this.offsetTop;
+  if(pp){
+   board.lineTo(mouseX,mouseY); //终止位置
+   board.stroke();				//结束图形
+  }
+ });
+ 
+ function clearCan(){
+ 	   var canvas = document.getElementById('can');
+       var board=canvas.getContext("2d");
+       board.clearRect(0,0,316,400);
+	   uexWindow.close(-1);
+ 	   //uexWindow.evaluateScript("root","0","windowOpen('index')");
+		uexWindow.evaluatePopoverScript('root','content','goToDraw()');
+	
+	}
+ 
+</script>
+
+
+<div id="clearbtn" ontouchstart="zy_touch('btn-back')" onclick="clearCan()">清除</div>
+<!--块容器结束-->
+            </div>
+            <!--content结束-->	
+        </div>
+    </body>
+	<script src="js/base64.js"></script>
+	<script src="js/login.js"></script>
+    <script>
+        zy_init();
+	
+    </script>
+</html>

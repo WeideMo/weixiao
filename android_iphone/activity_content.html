@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-tab.css">
+	<link rel="stylesheet" href="css/ui-btn.css">
+    <link rel="stylesheet" href="css/ui-img.css"> 
+	<link rel="stylesheet" href="css/ui-list.css">
+	<link rel="stylesheet" href="css/ui-input.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/ui-box.css">
+	<link rel="stylesheet" href="css/ui-color.css">
+	<link rel="stylesheet" href="css/act_cont.css">
+	<link rel="stylesheet" href="css/scroller.css">
+        <script src="js/zy_control.js"></script>
+        <script src="js/zy_click.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<style type="text/css">
+#php100{ border:1px solid #ccc;}
+#clearbtn{background:red; color:#fff; width:50px; height:25px; margin:0 auto; text-align:center;}
+</style>
+    </head>
+    <body class="um-vp c-wh" ontouchstart>
+        <div id="page_0" class="up ub ub-ver" tabindex="0">
+			<div id="header" class="uh c-m3 t-wh headerbg">
+                <!--按钮开始-->
+ 		 <div class="btn btn-l ub ub-ac ">       
+              <div class="ulim" ontouchstart="zy_touch('btn-back')" onclick="uexWindow.close(-1);" style="border-right:1px dotted #ccc;">
+              	<img src='css/images/title_back.png' style="width:2.5em;height:1.5em;">
+				<span style="height:100%;">&nbsp;</span>
+			  </div>       
+          </div>
+<!--按钮结束--><h1 class="hbg ulev0 ut-s tx-c" tabindex="0"><span style="font-size:1.3em;">活动</span></h1>
+            </div>
+            <!--header结束-->
+			<!--content开始-->
+            <div id="content" class="ub-f1 tx-l t-bla ub-img6 res10">
+            	<!--块容器开始-->
+              <div id="forum_list">
+              	
+              </div>
+<!--块容器结束-->
+            </div>
+            <!--content结束-->	
+        </div>
+    </body>
+	<script src="js/zepto.js"></script>
+<script src="js/forum.js"></script>
+	<script src="js/base64.js"></script>
+	<script src="js/login.js"></script>
+    <script>
+        zy_init();
+	window.uexOnload=function(type)
+	{
+		if(!type){
+		}
+		getActivityContent();
+		
+	}
+    </script>
+</html>

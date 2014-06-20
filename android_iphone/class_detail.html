@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-img.css">
+  <link rel="stylesheet" href="css/ui-res.css">
+    <link rel="stylesheet" href="css/ui-input.css">
+    <link rel="stylesheet" href="css/ui-list.css">
+
+    <link rel="stylesheet" href="css/ui-tab.css">
+    <link rel="stylesheet" href="css/ui-btn.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+		<link rel="stylesheet" href="css/login.css">
+		<link rel="stylesheet" href="css/ui-media.css">
+        <script src="js/zy_control.js"></script>
+        <script src="js/zy_click.js"></script>
+		<style>
+			.tmargin{margin:0.5em;}
+			.fwh{color:#fff;}
+			.classnum{height:1.5em; text-align:left; line-height:1.5em; font-size:24px; width:3em;}
+		</style>
+  </head>
+<body class="um-vp" ontouchstart>
+	<div style="overflow: hidden; left: 0px;" id="wrapper">
+	
+	<div id="content" class="ub-f1 tx-l t-bla ub-img6 res10 tmargin">
+			 <div class="loginModule">
+							<div class="inputArea">
+							<!--下拉列表开始-->
+						<div class="ub uba uc-a1 c-wh b-gra us-i sel">  
+						   <div class="ub-f1 ut-s uinn ulev-1 tx-l" id="sweek0">星期</div>
+						   <div class="ubl b-gra c-org c-m2 umw2 ub ub-pc uc-r1 ub-ac"> 
+						    <div class="ub-img umw1 umh1 res3"></div> 
+						  </div> 
+						  <select name="sel0" selectedindex="0" id="week" onchange="zy_selectmenu(this.id);getclasslist(this.value);"> 
+						   <option value="1">星期一</option>
+						   <option value="2">星期二</option>
+						   <option value="3">星期三</option>
+						  <option value="4">星期四</option>
+						  <option value="5">星期五</option>
+						  <option value="6">星期六</option>
+						  </select>
+						</div>
+						<!--下拉列表结束-->
+					</div>
+            	<div class="  uba b-org  c-org us fwh">您好，<span id="sname"></span>以下是您<span id="sweek"></span>课程：</div>
+            	<!--列表开始-->
+<div class="  uba b-org  c-org1 us " id="classlist">
+	加载中..
+  </div>
+<!--列表结束-->
+				<div class="">
+  				<div ontouchstart="zy_touch('btn-newact')" onclick="goClassWindow()" class="btn uba b-org uinn5 c-org c-m1 uc-a t-wh"  style="float:right; width::5em; color:white;">添加课程</div>
+				</div>
+            </div>
+			</div>
+</body>
+<script src="js/zepto.js"></script>
+<script src="js/forum.js"></script>
+<script src="js/login.js"></script>
+<script>
+zy_init();
+var Global = function(){
+	//  根据value选中select值
+	this.n_select_value = function(vobj,vvalue){
+		var sfsel=document.getElementById(vobj);
+		for(var sfi=0;sfi<sfsel.length;sfi++)
+		{
+			if(sfsel.options[sfi].value==vvalue)
+			{
+				sfsel.options.selectedIndex=sfi;
+				break;
+			}
+		}
+	}
+};
+var global = new Global();
+var week=0;
+var weekday=new Array(7)
+weekday[1]="星期一";
+weekday[2]="星期二";
+weekday[3]="星期三";
+weekday[4]="星期四";
+weekday[5]="星期五";
+weekday[6]="星期六";
+weekday[7]="星期日";
+var uid =localStorage.uid;
+var nowweek = 0;
+window.uexOnload=function(type)
+{
+	if(!type){
+	}
+	var d=new Date();
+	week = d.getDay();
+	if(week==0) week=7;
+	 getclasslist(week);
+}
+ //  获取课表
+ function getclasslist(week){
+ 	nowweek=week;
+ 	if(uid==undefined){
+		$('#classlist').html('请先登录！');
+		return;
+	}
+	 //var sname =localStorage.uname;
+	 //$('#sname').html(sname+'。');
+	$('#sweek').html(weekday[week]);
+	$('#sweek0').html(weekday[week]);
+	global.n_select_value('week',week);
+	$('#classlist').html('加载中..');
+ 	var url = 'http://c020901.vhost.bindow.cn/weixiao/index.php?callback=?&m=Index&a=getClass&week='+week+'&uid='+uid;
+ 	$.getJSON(url,function(json){
+		var nums = json.count;
+		if (nums > 0) {
+			$('#classlist').html('');
+			for (var i in json.content) {
+				var item = json.content[i];
+				var tp = '<ul ontouchstart="zy_touch(\'btn-act\')" class="c-m2 ubb ub b-org t-bla ub-ac lis">';
+				tp += '<li class="classnum">' + item.number + '</li>';
+				tp += '<ul class="ub-f1 ub ub-ver">';
+				tp += '<li >' + item.classname + ' <span style="float:right;color:#888;font-size:14px;"onclick="goedit('+item.id+')">[修改]</span></li>';
+				tp += '<ul class="ub ub-ac t-gra ulev-2">';
+				tp += '<li class="umh2 umw2 ub-img im1" ></li>';
+				tp += '<li class="ub-f1">' + item.teacher + '</li>';
+				tp += '<li class="umh2 umw2 ub-img im2" ></li>';
+				tp += '<li class="ub-f1">' + item.address + '</li>';
+				tp += '</ul></ul></ul>';
+				$('#classlist').append(tp);
+			}
+		}else{
+			$('#classlist').html('尚未查询到课程信息...');
+		}
+	});
+ }
+function reloadlist(){getclasslist(nowweek);}
+function goedit(id){
+	localStorage.setItem('classid',id);
+	uexWindow.open("commitclass",0,"commitClass.html",0,"","",0);
+}
+</script>
+</html>

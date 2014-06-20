@@ -1,0 +1,277 @@
+/* 
+  Carousel control base styling 
+*/
+
+.m-carousel-controls {
+    padding-top: 0;
+    text-align: center;
+}
+
+.m-carousel-controls a {
+    padding: 0.31em;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-drag: -moz-none;
+    user-drag: none;
+}
+
+
+   
+/* Carousel controls: Bulleted */
+.m-carousel-bulleted a {
+    line-height: 0;
+    text-decoration: none;
+    text-indent: -64.4em;
+    overflow: hidden;
+    display: inline-block;
+    padding: 0.375;
+    width: 0;
+    height: 0;
+    margin: 0 0.187em;
+    color: #333;
+    background-color: rgba(255,255,255,0.3);
+    -webkit-transition: background-color 0.1s ease-in;
+    -moz-transition: background-color 0.1s ease-in;
+    -o-transition: background-color 0.1s ease-in;
+    transition: background-color 0.1s ease-in;
+    -webkit-box-shadow: inset rgba(0,0,0,0.25) 0 0.06em 0.12em;
+    -moz-box-shadow: inset rgba(0,0,0,0.25) 0 0.06em 0.12em;
+    box-shadow: inset rgba(0,0,0,0.25) 0 0.06em 0.12em;
+    -webkit-border-radius: 0.375em;
+    -moz-border-radius: 0.375em;
+    border-radius: 0.375em;
+}
+.m-carousel-bulleted a:hover, .m-carousel-bulleted a:focus {
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.6);
+}
+.m-carousel-bulleted a.m-active {
+    background-color: green;
+    -webkit-box-shadow: rgba(0,0,0,0.25) 0 0.06em 0.12em;
+    -moz-box-shadow: rgba(0,0,0,0.25) 0 0.06em 0.12em;
+    box-shadow: rgba(0,0,0,0.25) 0 0.06em 0.12em;
+}
+
+
+
+/* Carousel controls: Pagination */
+.m-carousel-pagination {
+    padding-top: 0.625em;
+}
+.m-carousel-pagination a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.187em 0.625em;
+    margin: 0.06em 0;
+    color: #333;
+    background-color: rgba(255,255,255,0.3);
+    -webkit-transition: background-color 0.1s ease-in;
+    -moz-transition: background-color 0.1s ease-in;
+    -o-transition: background-color 0.1s ease-in;
+    transition: background-color 0.1s ease-in;
+    -webkit-border-radius: 0.12em;
+    -moz-border-radius: 0.12em;
+    border-radius: 0.12em;
+}
+.m-carousel-pagination a:hover, .m-carousel-pagination a:focus {
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.6);
+}
+.m-carousel-pagination a.m-active {
+    background-color: rgba(255,255,255,1);
+}
+
+/* Carousel controls: HUD */
+.m-carousel-hud {
+  padding-top: 0;
+}
+.m-carousel-hud a {
+    z-index: 2;
+    opacity: 0;
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 3.125em;
+    height: 3.125em;
+    margin: -1.56em 0 0 0;
+    padding: 0;
+    text-decoration: none;
+    text-indent: -62.4em;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-transition: opacity 0.1s ease-in;
+    -moz-transition: opacity 0.1s ease-in;
+    -o-transition: opacity 0.1s ease-in;
+    transition: opacity 0.1s ease-in;
+    -webkit-border-radius: 1.56em;
+    -moz-border-radius: 1.56em;
+    border-radius: 1.56em;
+}
+.m-carousel:hover .m-carousel-hud a {
+    opacity: 0.3;
+}
+.m-carousel .m-carousel-hud a:hover, .m-carousel .m-carousel-hud a:focus {
+    opacity: 1;
+}
+.m-carousel-hud a:after {
+    color: rgba(255,255,255,0.85);
+    content: "\25c0";
+    font-size: 1.56em;
+    font-weight: bold;
+    text-indent: 0;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 0.625em;
+    left: 0;
+    width: 2.9em;
+    height: 3.1em;
+    z-index: 9;
+}
+.m-carousel-hud .m-carousel-prev {
+    left: 0.625em;
+}
+.m-carousel-hud .m-carousel-next {
+    right: 0.625em;
+}
+.m-carousel-hud .m-carousel-next:after {
+    left: auto;
+    right: 0;
+    content: "\25b6";
+}
+
+
+
+
+/* extra bits */
+
+/* captions */
+.m-caption {
+    margin: 0;
+    padding: 0.5em;
+    height: auto;
+	color:white;
+	font-weight:bold;
+	font-size:0.85em;
+	text-align:left;
+	border-top:1px solid #eee;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+
+
+
+
+/* scaled slides */
+.m-scaled .m-item {
+    opacity: 0.7;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -o-transform: scale(0.75);
+    transform: scale(0.75);
+
+    /* Configure animations */
+    /* (0.5s would match the transition length between each, 
+      but fast swiping on a phone can result in odd timing. 
+      Half-length durations for each transform is a reasonable 
+      middle ground.) */
+    -webkit-transition: -webkit-transform cubic-bezier(0.33, 0.66, 0.66, 1) 0.25s, opacity ease-out 0.25s;
+    -moz-transition-timing-function: -moz-transform cubic-bezier(0.33, 0.66, 0.66, 1) 0.25s, opacity ease-out 0.25s;
+    -o-transition-timing-function: -o-transform cubic-bezier(0.33, 0.66, 0.66, 1) 0.25s, opacity ease-out 0.25s;
+    transition-timing-function: transform cubic-bezier(0.33, 0.66, 0.66, 1) 0.25s, opacity ease-out 0.25s;
+}
+.m-scaled .m-active {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+/* Default Themes/Sytles for Slider */
+
+.m-fluid .m-item {
+    
+}
+
+.m-fluid{
+	background:url(images/picBg.jpg) repeat;
+}
+/* Fluid Width Photo Carousel
+ * .m-carousel.m-fluid.m-carousel-photos
+ */
+
+.m-carousel-photos {
+    margin: 0 -0.625em;
+    padding: 0 0.625em;
+	background-color:#FFF;
+	min-height:6em;
+}
+
+.m-item{
+	text-align:center;
+}
+
+.m-carousel-photos .m-item  > img {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    width: 100%;
+    height: auto;
+
+    -webkit-box-shadow: rgba(0,0,0,0.5) 0 0.31em 0.625em;
+    -moz-box-shadow: rgba(0,0,0,0.5) 0 0.31em 0.625em;
+    -o-box-shadow: rgba(0,0,0,0.5) 0 0.31em 0.625em;
+    -ms-box-shadow: rgba(0,0,0,0.5) 0 0.31em 0.625em;
+    box-shadow: rgba(0,0,0,0.5) 0 0.31em 0.625em;
+}
+
+.m-carousel-photos .m-caption {
+    background: rgba(100, 100, 100, 0.7);
+    bottom: 0;
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Inner Cards for Carousel */
+.m-card-dark, .m-card-light {
+    padding: 1.25em;
+    -webkit-border-radius: 0.375em;
+    -moz-border-radius: 0.375em;
+    border-radius: 0.375em;
+
+    -webkit-box-shadow: rgba(0,0,0,0.5) 0 0.31em 0.625em;
+    -moz-box-shadow: rgba(0,0,0,0.5) 0 0.31em 0.625em;
+    -o-box-shadow: rgba(0,0,0,0.5) 0 0.31em 0.625em;
+    -ms-box-shadow: rgba(0,0,0,0.5) 0 0.31em 0.625em;
+    box-shadow: rgba(0,0,0,0.5) 0 0.31em 0.625em;    
+}
+.m-card-dark {
+    background: rgba(0,0,0,0.5);
+    color: #FFF;
+}
+.m-card-light {
+    background: rgba(255,255,255,0.9);
+    color: #000;
+}
+.m-card-dark .m-caption, .m-card-light .m-caption {
+    margin: 0;
+    padding: 0.625em 0 0 0;
+}
+
+.m-fade-out {
+    -webkit-mask-image: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,
+    rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%);
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">    <link rel="stylesheet" href="css/ui-input.css">
+    <link rel="stylesheet" href="css/ui-tab.css">
+    <link rel="stylesheet" href="css/ui-btn.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+		<link rel="stylesheet" href="css/login.css">
+		<link rel="stylesheet" href="css/ui-media.css">
+		<link rel="stylesheet" href="css/comment.css">
+        <script src="js/zy_control.js"></script>
+        <script src="js/zy_click.js"></script>
+		<style>
+			#submitBtn{ margin:1em; background:orange; border-radius: 0.5em 0.5em 0.5em 0.5em; border:1px solid #fff; width:8em; height:1.5em; text-align:center;}
+		</style>
+    </head>
+    <body class="um-vp c-wh" ontouchstart>
+        <div id="page_0" class="up ub ub-ver" tabindex="0">
+			<div id="header" class="uh c-m3 t-wh headerbg">
+                <!--按钮开始-->
+ 		 <div class="btn btn-l ub ub-ac ">       
+              <div class="ulim" ontouchstart="zy_touch('btn-back')" onclick="uexWindow.close(-1);" style="border-right:1px dotted #ccc;">
+              	<img src='css/images/title_back.png' style="width:2.5em;height:1.5em;">
+				<span style="height:100%;">&nbsp;</span>
+			  </div>       
+          </div>
+<!--按钮结束--><h1 class="hbg ulev0 ut-s tx-c" tabindex="0"><span style="font-size:1.3em;">发表心情</span></h1>
+            </div>
+            <!--header结束-->
+			<!--content开始-->
+            <div id="content" class="ub-f1 tx-l t-bla ub-img6 res10" style="margin-top:1.5em;">
+            <div class="commentHeader">
+					热门评论(<span id="total"></span>)
+				</div>
+				<div id="comment">
+                  评论数据加载中...
+				</div>
+            	<!--文本开始-->
+<div class="uba c-org1 uc-a1 b-org us-i uinput uinn4">    
+ <textarea placeholder="发表评论..." id="pcontent" name="textarea-0"  class="uc-a1" style="height:4em;"></textarea>
+</div>
+<!--文本结束-->
+             <div class="ub-f1 uinn">
+							 <div ontouchstart="zy_touch('btn-newact')" class="btn uba b-org uinn5 c-org c-m1 uc-a t-wh"  onclick="publishComment();"  style="float:right; width::5em; color:white;">评&nbsp;&nbsp;&nbsp;论</div>	
+							 </div>
+            <!--content结束-->	
+        </div>
+    </body>
+	<script src="js/zepto.js"></script>
+	<script src="js/login.js"></script>
+    <script>
+        zy_init();
+		window.uexOnload=function(type)
+		{
+			if(!type){
+			}
+			getComment();
+			
+		}
+    </script>
+</html>

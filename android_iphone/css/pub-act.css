@@ -1,0 +1,174 @@
+body, html {
+    padding: 0;
+    margin: 0;
+	height:100%;
+	width:100%;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1em;
+    color: #517188;
+    text-align: left;
+    background: url(images/login_bg.png) no-repeat;
+	-webkit-background-size:100% 100%; 
+}
+
+a {
+    text-decoration: none;
+    color: #517188
+}
+
+.headerbg{
+	background:url(images/top_bg.png) repeat;
+	-webkit-background-size:100% 100%; 
+	color:#FFF;
+}
+
+.logo {
+    width: 100%;
+    padding: 5px 0;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+.loginIcon {
+    text-align: center;
+    margin: 0 auto;
+    width: 8.5em;
+    height: 2.9em;
+    background: url(images/logo.png) center no-repeat;
+    background-size: 100%
+}
+
+.loginWrap {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 20px
+}
+
+.slogan {
+    margin: 0.5em 0.2em 0.5em ;
+    text-align: center;
+	color:#517188;
+	font-size:1.3em;
+}
+
+.inputArea {
+    background: #fff;
+    border: 1px solid #628aa5;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 5px #acaeaf inset, 0px 1px 1px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 1px 5px #acaeaf inset, 0px 1px 1px rgba(255, 255, 255, 0.5)
+}
+
+.inputLine {
+    color: #000;
+    padding: 0.75em 0.625em;
+    clear: both;
+	 border-bottom: 1px solid #cfcfcf
+}
+
+.inputLine1{
+    color: #000;
+    padding: 0.75em 0.625em;
+    clear: both;
+	 border-bottom: 1px solid #cfcfcf
+}
+
+
+.il {
+    float: left;
+    padding-top: 1px;
+	color:orange;
+}
+
+.ir {
+    overflow: hidden;
+    text-align: left;
+    padding: 0;
+    padding: 0
+}
+
+.ir input {
+    -webkit-appearance: none;
+    width: 99%;
+    border: 0;
+    font-size: 1em;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0
+}
+
+.loginOper {
+    margin-top: 1em;
+    height: 2em
+}
+
+.loginOper .autoLogin {
+    float: left;
+    margin-left: -1px;
+}
+
+.loginOper .loginBtn {
+    text-align: left
+}
+
+.loginOper .loginBtn input[ type = button] {
+    height: 1.75em;
+    width: 5.5em;
+    display: inline-block;
+    font-size: 1em;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #3e6983;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    text-shadow: 0 -1px 1px rgba(0, 32, 75, 0.33);
+    -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+    background: #64a2cc;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#68a6ce),to(#2478b0));
+	background-image:-webkit-linear-gradient(top,#68a6ce,#2478b0);
+	background-image:-moz-linear-gradient(top,#68a6ce,#2478b0)
+}
+	
+.regModule{
+	margin-top:2em;
+}
+
+.regTitle{
+	height:2em;
+	line-height:2em;
+	padding-left:0.25em;
+}
+
+.regBtn{
+	border:1px solid #9cb1bf;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	-webkit-box-shadow:0 1px 1px #fff inset;
+	box-shadow:0 1px 1px #fff inset;
+	background-image:-webkit-gradient(linear,left top,left bottom,from(#fff),to(#e5edf1));
+	background-image:-webkit-linear-gradient(top,#fff,#e5edf1);
+	background-image:-moz-linear-gradient(top,#fff,#e5edf1);
+}
+
+.regBtn a{
+	display:inline-block;
+	height:2.2em;
+	line-height:2.2em;
+	width:100%;
+	text-align:center;
+}
+
+.loginFooter{
+	height:3em;
+}
+
+.loginFooter div{
+	font-size:0.9em;
+	color:#517188;
+	line-height:1em;
+	height:1em;
+	text-align:center;
+	margin:0.5em auto;
+}
+@media only screen and (-webkit-min-device-pixel-ratio:2){.loginIcon{background:0;}}

@@ -1,0 +1,87 @@
+
+.footerbg{
+	background:url(images/footer_bg.png) repeat;
+	-webkit-background-size:100% 100%; 
+}
+
+.headerbg{
+	background:url(images/top_bg.png) repeat;
+	-webkit-background-size:100% 100%; 
+}
+
+.shareList{
+	background-clip: padding-box;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #FFFFFF;
+    border: 1px solid #B1B1B1;
+    margin: 0.2em 0.2em;
+    padding: 0.625em;
+    position: relative;
+	height:auto; 
+	overflow:visible;
+}
+
+.title{
+	color:#808000;
+    font-family: "Helvetica",Helvetica,Geneva,Arial,sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+.title1{
+	color:#000;
+    font-family: "Helvetica",Helvetica,Geneva,Arial,sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+	overflow:hidden;
+}
+.com{color:green; 
+	 text-align:right;}
+.desc{
+	color: #666666;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    margin-top: 0.5em;
+}
+
+.otherInfo{
+	color: #999999;
+    font-size: 0.7em;
+    line-height: 1.2em;
+    margin-top: 0.2em;
+	width:100%;
+	border-bottom:1px dotted #ddd;
+}
+
+.otherInfo span{
+	width:100%;
+	display:inline-block;
+	color: #999999;
+	margin-bottom:0.2em;
+}
+
+.footer{
+	font-size:1em;
+	text-align:center;
+}
+.footer button{
+	height:2.5em;
+	border:1px solid #eaeaea;
+	width:90%;
+	margin-top:0.625em;
+	margin-bottom:0.625em;
+	line-height:1.25em;
+	-webkit-background-size:100% 100%;
+}
+
+.buttonBg{
+	background:url(images/button.png) repeat-x;
+}
+
+.buttonBg-mousedown{
+	background:url(images/button2.png) repeat-x;
+}
+
+#forum_list{
+	min-height:20em;
+}

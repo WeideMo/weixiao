@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">    <link rel="stylesheet" href="css/ui-res.css">
+    <link rel="stylesheet" href="css/ui-input.css">
+
+    <link rel="stylesheet" href="css/ui-tab.css">
+    <link rel="stylesheet" href="css/ui-btn.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+		<link rel="stylesheet" href="css/pub-act.css">
+		<link rel="stylesheet" href="css/ui-media.css">
+        <script src="js/zy_control.js"></script>
+        <script src="js/zy_click.js"></script>
+    </head>
+    <body class="um-vp c-wh" ontouchstart>
+        <div id="page_0" class="up ub ub-ver" tabindex="0">
+			<div id="header" class="uh c-m3 t-wh headerbg">
+                <!--按钮开始-->
+ 		 <div class="btn btn-l ub ub-ac ">       
+              <div class="ulim" ontouchstart="zy_touch('btn-back')" onclick="uexWindow.close(-1);" style="border-right:1px dotted #ccc;">
+              	<img src='css/images/title_back.png' style="width:2.5em;height:1.5em;">
+				<span style="height:100%;">&nbsp;</span>
+			  </div>       
+          </div>
+<!--按钮结束--><h1 class="hbg ulev0 ut-s tx-c" tabindex="0"><span style="font-size:1.3em;">课表</span></h1>
+            </div>
+            <!--header结束-->
+			<!--content开始-->
+            <div id="content" class="ub-f1 tx-l t-bla ub-img6 res10">
+            	<div class="loginWrap">
+					<div class="slogan">创建你的个人课表！</div>
+					<div class="loginModule" style="margin-top:2em;">
+						<form id="form" method="get">
+							<input name="check" value="1" type="hidden">
+							<div class="inputArea">
+							<!--下拉列表开始-->
+						<div class="ub uba uc-a1 c-wh b-gra us-i sel">  
+						   <div class="ub-f1 ut-s uinn ulev-1 tx-l" id="sweek">星期一</div>
+						   <div class="ubl b-gra c-org c-m2 umw2 ub ub-pc uc-r1 ub-ac"> 
+						    <div class="ub-img umw1 umh1 res3"></div> 
+						  </div> 
+						  <select name="sel0" selectedindex="0" id="week" onchange="zy_selectmenu(this.id)"> 
+						   <option value="1">星期一</option>
+						   <option value="2">星期二</option>
+						   <option value="3">星期三</option>
+						  <option value="4">星期四</option>
+						  <option value="5">星期五</option>
+						  <option value="6">星期六</option>
+						  </select>
+						</div>
+						<!--下拉列表结束-->
+						  <!--下拉列表开始-->
+						<div class="ub uba uc-a1 c-wh b-gra us-i sel">  
+						   <div class="ub-f1 ut-s uinn ulev-1 tx-l" id="snumber">第1节</div>
+						   <div class="ubl b-gra c-org c-m2 umw2 ub ub-pc uc-r1 ub-ac"> 
+						    <div class="ub-img umw1 umh1 res3"></div> 
+						  </div> 
+						  <select name="sel1" selectedindex="0" id="number" onchange="zy_selectmenu(this.id)"> 
+						   <option value="1">第1节</option>
+						   <option value="2">第2节</option>
+						   <option value="3">第3节</option>
+						  <option value="4">第4节</option>
+						  <option value="5">第5节</option>
+						  <option value="6">第6节</option>
+						  <option value="7">第7节</option>
+						  <option value="8">第8节</option>
+						  <option value="9">第9节</option>
+						  <option value="10">第10节</option>
+						  <option value="11">第11节</option>
+						  </select>
+						</div>
+						<!--下拉列表结束-->
+						
+
+
+								<div class="inputLine">
+									<div class="il">课程名：</div>
+									<div class="ir">
+										<input id="classname" name="author" placeholder="请输入课程名称…" autocapitalize="off" autocomplete="off" type="text">
+									</div>
+								</div>
+								<div class="inputLine">
+									<div class="il">任课老师：</div>
+									<div class="ir">
+										<input id="teacher" name="atel" placeholder="请输入任课老师…" autocapitalize="off" autocomplete="off" type="text">
+									</div>
+								</div>
+								<div class="inputLine">
+									<div class="il">上课地点：</div>
+									<div class="ir">
+										<input id="address" name="adate" placeholder="请输入上课地点…" autocapitalize="off" autocomplete="off" type="text">
+									</div>
+								</div>
+								
+							</div>
+						</form>
+					</div>
+					   <br/>
+					   
+						<div class="">
+							<div ontouchstart="zy_touch('btn-newact')" id="gosub" class="btn uba b-org uinn5 c-org c-m1 uc-a t-wh"  style="float:right; width::5em; color:white;">提交</div>
+						</div>
+			   </div>
+            </div>
+            <!--content结束-->	
+        </div>
+    </body>
+	<script src="js/zepto.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/forum.js"></script>
+    <script>
+var Global = function(){
+	//  根据value选中select值
+	this.n_select_value = function(vobj,vvalue){
+		var sfsel=document.getElementById(vobj);
+		for(var sfi=0;sfi<sfsel.length;sfi++)
+		{
+			if(sfsel.options[sfi].value==vvalue)
+			{
+				sfsel.options.selectedIndex=sfi;
+				break;
+			}
+		}
+	}
+};
+var global = new Global();
+var weekday=new Array(7)
+weekday[1]="星期一";
+weekday[2]="星期二";
+weekday[3]="星期三";
+weekday[4]="星期四";
+weekday[5]="星期五";
+weekday[6]="星期六";
+weekday[7]="星期日";
+var gotype = 0;
+var editid = 0;
+        zy_init();
+		$(function(){
+			var cid = localStorage.classid;
+			var uid = localStorage.uid;
+			if(cid>0){
+				var url = 'http://c020901.vhost.bindow.cn/weixiao/index.php?callback=?&m=Index&a=getOneClass&id='+cid+'&uid='+uid;
+				$.getJSON(url,function(json){
+					$('#sweek').html(weekday[json.week]);
+					$('#snumber').html('第'+json.number+'节');
+					$('#classname').val(json.classname);
+					$('#teacher').val(json.teacher);
+					$('#address').val(json.address);
+					global.n_select_value('week',json.week);
+					global.n_select_value('number',json.number);
+				});
+				editid = cid;
+				localStorage.setItem('classid',0);
+				gotype = 1;
+			}
+			$('#gosub').click(function(){
+				if(gotype==0) gocommitClass();
+				else goeditcommitClass(editid);
+			});
+		});
+    </script>
+</html>
